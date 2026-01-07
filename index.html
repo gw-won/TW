@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE AWESOME | Future Marketing</title>
     <script>
-      // Polyfill for Node.js globals that might be missing in browser environments
-      window.process = window.process || { env: { NODE_ENV: 'production' } };
+      // Robust Polyfill for Node.js globals in browser
+      window.process = window.process || {};
+      window.process.env = window.process.env || {};
+      window.process.env.NODE_ENV = window.process.env.NODE_ENV || 'production';
       window.global = window;
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
@@ -74,5 +76,7 @@
 </head>
   <body>
     <div id="root"></div>
+    <!-- Entry Point Script: Critical for React to load -->
+    <script type="module" src="./index.tsx"></script>
   </body>
 </html>
