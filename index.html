@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>THE AWESOME | Future Marketing</title>
+    <script>
+      // Polyfill for Node.js globals that might be missing in browser environments
+      window.process = window.process || { env: { NODE_ENV: 'production' } };
+      window.global = window;
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
       tailwind.config = {
